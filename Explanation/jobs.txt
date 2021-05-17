@@ -1,0 +1,14 @@
+I created a directory migr-utils where the seed.yaml and migrate.yaml are. 
+
+The containers db-migr and db-seed are copies of the original db container. I am sure this can be optimized, but this may be an overkill for an operation that is not frequent. 
+
+The admin username and password were also exposed, so I created another secret: secret-admin.yaml.
+Before running these utils we have to apply the secret:
+kubectl apply ./migr-utils/secret-admin.yaml
+
+The commands are:
+kubectl apply -f migrate.yaml
+and 
+kubectl apply -f seed.yaml
+
+Most if it is copied from manual experimentation inside the pods using $ kubectl exec -it …
