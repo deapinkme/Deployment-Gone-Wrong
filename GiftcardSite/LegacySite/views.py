@@ -15,7 +15,7 @@ SALT_LEN = 16
 
 # Prometheus stuff!
 graphs = {}
-
+graphs['database_error_return_404'] = Counter('database_error_return_404', 'Total' + '  404 Errors')
 # Create your views here.
 # Landing page. Nav bar, most recently bought cards, etc.
 def index(request): 
